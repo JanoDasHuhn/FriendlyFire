@@ -1,6 +1,7 @@
 package de.johnpork.listeners;
 
 import de.johnpork.managers.PlayerManager;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -32,7 +33,7 @@ public class FriendlyFireListener implements Listener {
         }
         damager.damage(event.getDamage());
         event.setCancelled(true);
-        damager.sendMessage(Color.RED + "Reverse Friendly Fire is enabled!");
+        damager.sendMessage(ChatColor.RED + "Reverse Friendly Fire is enabled!");
     }
 
 }
