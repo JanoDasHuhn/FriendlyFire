@@ -32,14 +32,14 @@ public final class FriendlyFire extends JavaPlugin {
         try {
             database.connect();
         } catch (SQLException e) {
-            System.out.println("Friendly Fire disabled because of an Error involving SQL");
+            Bukkit.getLogger().info("Friendly Fire disabled because of an Error involving SQL.");
             e.printStackTrace();
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        System.out.println("FriendlyFire Database connected");
+       Bukkit.getLogger().info("FriendlyFire Database connected.");
         String createTableSQL = "CREATE TABLE IF NOT EXISTS minecraft_players ("
-                + "uuid VARCHAR(36) PRIMARY KEY" // UUID is 36 characters long
+                + "uuid VARCHAR(36) PRIMARY KEY"
                 + ");";
         try {
             Statement statement = database.getConnection().createStatement();

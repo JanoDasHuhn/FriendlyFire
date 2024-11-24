@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.plugin.PluginManager;
 
+import java.awt.*;
 import java.net.http.WebSocket;
 
 public class FriendlyFireListener implements Listener {
@@ -25,12 +26,13 @@ public class FriendlyFireListener implements Listener {
             return;
         }
         Player damager = (Player) event.getDamager();
-        Player victim = (Player) event.getDamager();
+
         if(!playerManager.getPlayers().contains(damager)){
             return;
         }
         damager.damage(event.getDamage());
         event.setCancelled(true);
+        damager.sendMessage(Color.RED + "Reverse Friendly Fire is enabled!");
     }
 
 }
