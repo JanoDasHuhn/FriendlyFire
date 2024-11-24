@@ -1,0 +1,11 @@
+name: FriendlyFire
+version: '1.0'
+main: de.johnpork.FriendlyFire
+api-version: '1.21'
+authors: [ JanoDasHuhn ]
+description: Friendly Fire like R6
+website: john-pork.de
+commands:
+  friendlyfire:
+    aliases:
+      - ff
